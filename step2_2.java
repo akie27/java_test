@@ -16,5 +16,14 @@ public class step2_2 {
         /* BMI の計算 */
         double bmi = weight / ( height_m * height_m );
         System.out.println("BMIは" + String.format("%.1f",bmi) + "です");
+        if( bmi < 18.5 ){
+            System.out.println( "低体重" );
+        }      
+        else if( bmi < 25.0 ){
+            System.out.println( "標準" );
+        } 
+        else{
+            System.out.println( "肥満" );
+        }        
     }
 }
