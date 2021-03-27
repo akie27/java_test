@@ -1,21 +1,12 @@
-import java.util.*;
 public class step2_2 {
-    public static void main(String args []) {
-
-        Scanner scanner = new Scanner(System.in);
-
-        /* 身長と体重の読み込み */
-        System.out.println("BMIの計算:");
-	    System.out.print("身長(cm)を入力してください: ");
-        double height_cm = scanner.nextDouble();
-        System.out.print("体重(kg)を入力してください: ");
-        double weight = scanner.nextDouble();
-
-        double height_m = height_cm / 100.0;
-
-        /* BMI の計算 */
-        double bmi = weight / ( height_m * height_m );
-        System.out.println("BMIは" + String.format("%.1f",bmi) + "です");
+    public static double BMI(double height, double weight) {
+        height = height / 100;
+        double bmi = weight / (height * height);
+        return bmi;
+    }
+    public static void main(String[] args) {
+        double bmi = BMI(170, 60); 
+        System.out.println(String.format("%.1f",bmi));
         if( bmi < 18.5 ){
             System.out.println( "低体重" );
         }      
@@ -24,6 +15,6 @@ public class step2_2 {
         } 
         else{
             System.out.println( "肥満" );
-        }        
+        } 
     }
 }
